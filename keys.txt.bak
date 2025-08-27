@@ -1,0 +1,18 @@
+docker build -t rmsndrdocker/dotnet-ci:latest .
+
+SDK key name:
+My Test Server Key cadecbcd
+SDK key:
+dddddbdd-37c9-4f4a-b28c-054926f0763b
+
+SDK key name:
+My Test Client Key c7ecbd71
+SDK key:
+78539961-7967-4901-be2e-14b9113c1f1a
+
+
+server-dotnet-demo-sdk
+
+ID: serverdotnetdemosdk
+
+f8e77389-9ffe-420a-bda6-693c15672415
