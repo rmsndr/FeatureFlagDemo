@@ -1,5 +1,0 @@
-server-dotnet-demo-sdk
-
-ID: serverdotnetdemosdk
-
-f8e77389-9ffe-420a-bda6-693c15672415
