@@ -4,28 +4,51 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>
-        Learn about
-        <a href="https://researchus.com/">how to securely search electronic court records and documents throughout the state</a>. – directly from the courts’ databases.
-    </p>
+<!-- 1. Add a quick style for dark mode -->
+<style>
+  .dark-mode {
+    background-color: #222;
+    color: #eee;
+  }
+  .dark-mode a { color: #7da; }
+  .dark-mode .btn-primary { background-color: #444; border-color: #555; }
+</style>
+
+<!-- 2. Wrap everything in a container that flips when ShowDarkMode is true -->
+<div class="@(Model.ShowDarkMode ? "dark-mode" : "")">
+
+  <div class="text-center">
+      <h1 class="display-4">Welcome</h1>
+      <p>
+          Learn about
+          <a href="https://researchus.com/">how to securely search electronic court records and documents throughout the state</a>. – directly from the courts’ databases.
+      </p>
+  </div>
+
+  <hr />
+
+  <p><strong>Current User:</strong> @Model.CurrentUser</p>
+  <p><strong>Location:</strong> @Model.CurrentLocation</p>
+
+  @if (Model.ShowBetaBanner)
+  {
+      <div class="alert alert-info">🚀 Welcome to the Beta Experience!</div>
+  }
+
+  <p><strong>Banner Flag status:</strong> @(Model.ShowBetaBanner ? "ON" : "OFF")</p>
+
+  <hr />
+
+  <!-- 3. Dark Mode Status and Refresh -->
+  <p><strong>Dark Mode:</strong> @(Model.ShowDarkMode ? "ON" : "OFF")</p>
+  <p>
+      <a class="btn btn-primary" href="/">Refresh (New Random User)</a>
+  </p>
+
+  <!-- 4. Keep your existing user-switch buttons -->
+  <p>
+      <a class="btn btn-primary" href="/?userId=userTX">Simulate Texas User</a>
+      <a class="btn btn-secondary" href="/?userId=userNY">Simulate New York User</a>
+  </p>
+
 </div>
-
-<hr />
-
-<p><strong>Current User:</strong> @Model.CurrentUser</p>
-<p><strong>Location:</strong> @Model.CurrentLocation</p>
-
-@if (Model.ShowBetaBanner)
-{
-    <div class="alert alert-info">🚀 Welcome to the Beta Experience!</div>
-}
-
-<p><strong>Flag status:</strong> @(Model.ShowBetaBanner ? "ON" : "OFF")</p>
-
-<!-- Demo switching buttons -->
-<p>
-    <a class="btn btn-primary" href="/?userId=userTX">Simulate Texas User</a>
-    <a class="btn btn-secondary" href="/?userId=userNY">Simulate New York User</a>
-</p>

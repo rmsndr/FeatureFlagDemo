@@ -1,2 +1,25 @@
-# Ignore any local key or secret files
+# Local secret files
 keys.txt
+
+# Build output
+bin/
+obj/
+Debug/
+Release/
+
+# IDE and editor configs
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Backup files
+*.bak
+
+# Runtime artifacts
+*.runtimeconfig.json
+*.deps.json
+*.dll
+*.pdb
